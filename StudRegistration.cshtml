@@ -1,0 +1,317 @@
+@{
+    ViewBag.Title = "STUDENT REGISTRATION";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    label {
+        font-weight: 900;
+    }
+</style>
+
+<section class="h-100 bg-danger" style="background-color: #d7a3a385; width: 1514px; margin-left: -190px; ">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center h-100" style="margin-left: -220px; margin-top: -24px;">
+            <div class="col-sm-6">
+                <div class="card card-registration my-4" style="font-size: 1rem; line-height: 2.15; padding-left: .75em; padding-right: .75em; margin-bottom: 65px;">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block" style="margin-left: -208px;">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                 alt="Sample photo" class="img-fluid"
+                                 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; width: 55%; height: 695px; margin-left: 112px; margin-top: 95px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+
+                <h2 style="margin-top: 95px; text-decoration: underline; font-weight: bolder;">STUDENT REGISTRATION</h2>
+                <div class="main">
+
+                    <div class="marquee"> </div>
+                    <div class="container" style="margin-left: -155px; width: 1015px; margin-top: 50px;">
+                        <form>
+                            <div class="row" style="padding: 30px;">
+                                <div class="col-sm-4">
+                                    <label> Name of the Student </label>
+                                    <input id="Name" placeholder="Name" type="text" class="form-control">
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label>Father's Name</label> <br>
+                                    <input id="FatherName" placeholder="Father Name" type="text" class="form-control">
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div style="display: flex;">
+                                        <label>Gender: </label>  &nbsp;&nbsp;&nbsp;
+                                        <label> Male</label>
+                                        <input type="radio" name="gender" value="male" class="form-control" style="width: 15px; margin-left: 10px; margin-top: -8px; ">
+                                        <label>Female</label>
+                                        <input type="radio" name="gender" value="female" class="form-control" style="width: 15px; margin-left: 10px; margin-top: -8px; ">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding: 30px;">
+                                <div class="col-sm-4">
+                                    <label> Student Mobile Number</label>
+                                    <input id="Student-Mobile-Number" placeholder="Phone Number" type="tel" maxlength="10" class="form-control">
+                                </div>
+
+                                <div class="col-sm-4" style="align-content: normal; ">
+                                    <label> Date of Birth</label>
+                                    <input type="date" id="Date-of-Birth" name="Date of Birth" class="form-control">
+                                </div>
+
+                                <div class="col-sm-4" style="align-content: normal; ">
+                                    <div>
+                                        <label> Hobbies </label>
+                                    </div>
+                                    <div>
+                                        <label> Dance</label>
+                                        <input type="checkbox" id="Dance" name="Dance">
+                                        <label> Music</label>
+                                        <input type="checkbox" id="Music" name="Music">
+                                        <label> Painting</label>
+                                        <input type="checkbox" id="Painting" name="Painting">
+                                        <label> Other</label>
+                                        <input type="checkbox" id="Other" name="Other">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="padding: 16px; margin-top: 95px; ">
+                                    <div class="col-sm-4">
+                                        <label>Country:</label> <select name="country" id="country" class="form-control">
+                                            <option value="" selected="selected">Select country</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label>State:</label> <select name="state" id="state" class="form-control">
+                                            <option value="" selected="selected">Please select country first</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label>City:</label> <select name="city" id="city" class="form-control">
+                                            <option value="" selected="selected">Please select state first</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex;  justify-content:center; margin-right:40px; margin-top:24px;" class="btn-group">
+                                    <button class="btn" style="margin-right: 45px; border: 0.5px solid #00000075;">Submit</button>
+                                    <h4 style="color:green" id="result1"></h4>
+                                    <input type="Reset">
+                                </div>
+                            </div>
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            alert("Name: " + $("#Name").val());
+        });
+        $("button").click(function () {
+            alert("Father's Name: " + $("#FatherName").val());
+        });
+        $("button").click(function () {
+            alert("Form has been submitted successfully");
+        });
+    });
+
+    var countryObject = {
+        "France": {
+            "Bordeaux": ["Cenon", "Libourne", "Pessac"],
+            "Grand Est": ["Colmar", "Villé", "Strasbourg"],
+            "Occitanie": ["Albi", "Béziers", "Carcassonne"]
+        },
+        "India": {
+            "Madhya Pradesh": ["Betul", "Bhind", "Bhopal", "Burhanpur", "Chhindwara", "Chhatarpur", "Damoh", "Datia", "Dewas", "Guna", "Gwalior", "Indore", "Itarsi", "Khargone", "Jabalpur", "Katni", "Khandwa", "Mandsaur", "Morena", "Nagda", "Narmadapuram", "Neemuch", "Pitampur", "Ratlam", "Rewa", "Sagar", "Satna", "Sehore", "Seoni", "Shahdol", "Shivpuri", "Singrauli", "Ujjain", "Vidisha"],
+            "Maharashtra": ["Achalpur", "Ahmednagar", "Amravati", "Aurangabad", "Jalgaon", "Kalyan-Dombivli", "Kolhapur", "Mumbai", "Nagpur", "Nashik", "Navi Mumbai", "Panvel", "Pune", "Sangli", "Satara", "Solapur", "Thane"],
+            "Uttar Pradesh": ["Agra", "Aligarh", "Amroha", "Ayodha", "Bareilly", "Budaun", "Chandausi", "Etah", "Etawah", "Fatehpur", "Firozabad", "Ghaziabad", "Gorakhpur", "Hapur", "Hardoi", "Hathras", "Jhansi", "Kasganj", "Mirzapur", "Muzzafarngar", "Kanpur", "Lucknow", "Mathura", "Meerut", "Moradabad", "Noida", "Pilibhit", "Prayagraj", "Raebareli", "Rampur", "Saharanpur", "Shahjahanpur", "Varanasi"],
+            "Uttarakhand": ["Almora", "Bageshwar", "Champawat", "Dehradun", "Devprayag", "Haldwani", "Haridwar", "Jyotirmath", "Kashipur", "Khatima", "Kirtinagar", "Kotdwar", "Mussorie", "Nainital", "Pantnagar", "Pauri", "Pithoragarh", "Purola", "Ramnagar", "Ranikhet", "Rishikesh", "Roorkee", "Rudrapur", "Sitarganj", "Srinagar Garhwal", "Tanakpur", "Uttarkashi", "Vikas Nagar"]
+        },
+        "USA": {
+            "California": ["Los Angeles", "San Francisco"],
+            "Florida": ["Cape Coral", "Sea Side"]
+        }
+    }
+
+    window.onload = function () {
+        var countryl = document.getElementById("country");
+        var statel = document.getElementById("state");
+        var cityl = document.getElementById("city");
+        for (var x in countryObject) {
+            countryl.options[countryl.options.length] = new Option(x, x);
+        }
+        countryl.onchange = function () {
+            cityl.length = 1;
+            statel.length = 1;
+            for (var y in countryObject[this.value]) {
+                statel.options[statel.options.length] = new Option(y, y);
+            }
+        }
+        statel.onchange = function () {
+            cityl.length = 1;
+            var z = countryObject[countryl.value][this.value];
+            for (var i = 0; i < z.length; i++) {
+                cityl.options[cityl.options.length] = new Option(z[i], z[i]);
+            }
+        }
+    }
+</script>
+
+
+
+@*<head>
+    <script>
+            card-registration.select- input.form- control[readonly]: not([disabled]) {
+            font - size: 1rem;
+            line - height: 2.15;
+            padding - left: .75em;
+            padding - right: .75em;
+            }
+            card-registration.select- arrow {
+                        top: 13px;
+        }
+    </script>
+</head>
+
+<section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                 alt="Sample photo" class="img-fluid"
+                                 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                                <h3 class="mb-5 text-uppercase">Student registration form</h3>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1m">First name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1n">Last name</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1m1">Mother's name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1n1">Father's name</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example8">Address</label>
+                                </div>
+
+                                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                                    <h6 class="mb-0 me-4">Gender: </h6>
+
+                                    <div class="form-check form-check-inline mb-0 me-4">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                                               value="option1" />
+                                        <label class="form-check-label" for="femaleGender">Female</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline mb-0 me-4">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                                               value="option2" />
+                                        <label class="form-check-label" for="maleGender">Male</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline mb-0">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                                               value="option3" />
+                                        <label class="form-check-label" for="otherGender">Other</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+
+                                        <select data-mdb-select-init>
+                                            <option value="1">State</option>
+                                            <option value="2">Option 1</option>
+                                            <option value="3">Option 2</option>
+                                            <option value="4">Option 3</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+
+                                        <select data-mdb-select-init>
+                                            <option value="1">City</option>
+                                            <option value="2">Option 1</option>
+                                            <option value="3">Option 2</option>
+                                            <option value="4">Option 3</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="text" id="form3Example9" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example9">DOB</label>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="text" id="form3Example90" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example90">Pincode</label>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="text" id="form3Example99" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example99">Course</label>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example97">Email ID</label>
+                                </div>
+
+                                <div class="d-flex justify-content-end pt-3">
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Reset all</button>
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-lg ms-2">Submit form</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
