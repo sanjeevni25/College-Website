@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - College Website</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body style="background-color:antiquewhite ">
+   
+
+    <nav class="navbar " style="height: 82px; background-color: #6b2727d1; margin-top: -50px; height: 70px;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="container" style="margin-left: 148px;">
+                    <ul class="nav nav-tabs" style="padding: 24px; font-size: large; border-bottom: 1px solid antiquewhite;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Home/Main" style="color: white" ;>Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.srms.ac.in" style="color: white" ;>Our Site</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Home/Courses" style="color: white" ;>Courses</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Home/StudRegistration" style="color: white" ;>Student Registration</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Home/Alumni" style="color: white" ;>Alumni</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Home/Contact" style="color: white" ;>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/SRMSIMS-logo.png" style="padding: 20px; height: 120px; margin-left: -111px; margin-right: 785px;">
+    <h4 style="margin-top: -30px; margin-left: -375px;">WHERE EDUCATION BLOOMS ALIVE</h4>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footer" style="text-align: center; color: black; font-size: 30px">
+                <p style="padding:100px; margin:50px;"></p>
+            </div>
+            <p>&copy; @DateTime.Now.Year Thanks for your time!!!</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Location.js"></script>
+    <link href="~/Content/Main.css" rel="stylesheet" />
+</body>
+
+</html>
